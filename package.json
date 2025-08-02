@@ -1,0 +1,33 @@
+{
+  "name": "project-parcel-react",
+  "version": "1.0.0",
+  "description": "This Project is created with Parcel",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel buid index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nagaraju981/Parcel-Project.git"
+  },
+  "keywords": [
+    "React",
+    "JavaScript",
+    "HTML",
+    "TailwindCSS"
+  ],
+  "author": "Nagaraju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nagaraju981/Parcel-Project/issues"
+  },
+  "homepage": "https://github.com/Nagaraju981/Parcel-Project#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
