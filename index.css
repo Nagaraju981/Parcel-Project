@@ -1,3 +1,79 @@
-#heading {
-    color : blue;
+.app-layout {
+    background-color: aqua;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.restaurant-logo {
+    padding: 10px;
+}
+
+.restaurant-logo img {
+    padding: 5px;
+    height: 100px;
+    width: 100px;
+}
+
+.nav-links > ul {
+    display: flex;
+}
+
+.nav-links > ul > li {
+    margin: 15px;
+    padding: 24px;
+    list-style-type: none;
+}
+
+.body {
+    border: 1px solid black;
+}
+
+.searchbar {
+    display: flex;
+}
+
+.searchbar > div {
+    margin: 10px;
+}
+
+.search-submit button {
+    background-color: blueviolet;
+}
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+.restaurant-card {
+    width: 230px;
+    padding: 5px;
+    
+    display: grid;
+    justify-content: center;
+}
+
+.restaurant-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.restaurant-card h3,h4 {
+    height: 10px;
+}
+
+.restaurant-card img {
+    height: 150px;
+    width: 150px;
+}
+
+.footer {
+    border: 1px solid black;
+}
+
