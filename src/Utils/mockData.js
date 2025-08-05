@@ -1,6 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-
 const restaurants = [
   {
     "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -735,77 +732,4 @@ const restaurants = [
     "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
   }
 ]
-
-const Header =()=>{
-    return (
-        <div className='header'>
-            <div className='restaurant-logo'>
-                <img alt='restaurant-logo' src='https://marketplace.canva.com/EAFpeiTrl4c/2/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-a1RYzvS1EFo.jpg'></img>
-            </div>
-            <div className='nav-links'>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>
-                        Cart
-                        {/* <img src='https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA='></img> */}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const Body =()=>{
-    return (
-        <div className='body'>
-            <div className='searchbar'>
-                <div><input type='text' placeholder='Enter food item name ...'></input></div>
-                <div className='search-submit'><button>Submit</button></div>
-            </div>
-            <div className='restaurant-container'>
-                {
-                    restaurants.map((e)=>(
-                        <RestaurantCard key={e.info.id} data={e}/>
-                    ))
-                }
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCard =(props)=>{
-    const {name, cuisines, avgRating, sla, cloudinaryImageId} = props.data.info
-    
-    return (
-        <div className='restaurant-card'>
-            <img src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'+cloudinaryImageId}></img>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(",")}</h4>
-            <h4>{avgRating} Rating</h4>
-            <h4>{sla.deliveryTime} minutes</h4>
-        </div>
-    )
-}
-
-const Footer =()=>{
-    return (
-        <div className='footer'>
-            Footer
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className='app-layout'>
-            <Header />
-            <Body />
-            <Footer />
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<AppLayout/>)
+export default restaurants
