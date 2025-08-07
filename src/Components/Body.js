@@ -1,7 +1,7 @@
 import RestaurantCard from './RestaurantCard'
 import restaurants from '../Utils/mockData';
 
-const Body =()=>{
+const Body = () => {
     const listofrestaurants = {
         "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
         "info": {
@@ -22,15 +22,17 @@ const Body =()=>{
     return (
         <div className='body'>
             <div className='searchbar'>
-                <button onClick={()=>{
+                <button onClick={() => {
                     console.log("Button clicked")
-                }}>Filtered Data</button>
-                <div className='search-submit'><button>Submit</button></div>
+                }}>
+                    Filtered Data
+                </button>
+
             </div>
             <div className='restaurant-container'>
                 {
-                    restaurants.map((e)=>(
-                        <RestaurantCard key={e.info.id} data={e}/>
+                    restaurants.map((e) => (
+                        <RestaurantCard key={e.info.id} data={e} />
                     ))
                 }
             </div>
