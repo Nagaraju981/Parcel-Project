@@ -8,7 +8,7 @@ const RestaurantCard =(props)=>{
             <img src={IMG_URL+cloudinaryImageId}></img>
             <h3>{name}</h3>
             <h4>{cuisines.join(",")}</h4>
-            <h4>{avgRating} Rating</h4>
+            <h4>{avgRating} Ratings</h4>
             <h4>{sla.deliveryTime} minutes</h4>
         </div>
     )

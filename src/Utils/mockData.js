@@ -15,7 +15,7 @@ const restaurants = [
       ],
       "avgRating": 4.1,
       "parentId": "547",
-      "avgRatingString": "4.1",
+      "avgRatingString": "3.5",
       "totalRatingsString": "45K+",
       "sla": {
         "deliveryTime": 24,
@@ -226,7 +226,7 @@ const restaurants = [
         "Tibetan",
         "Desserts"
       ],
-      "avgRating": 4.1,
+      "avgRating": 3.1,
       "parentId": "61955",
       "avgRatingString": "4.1",
       "totalRatingsString": "4.3K+",
@@ -590,7 +590,7 @@ const restaurants = [
         "Tibetan",
         "Desserts"
       ],
-      "avgRating": 4.1,
+      "avgRating": 3.7,
       "parentId": "434792",
       "avgRatingString": "4.1",
       "totalRatingsString": "2.2K+",
@@ -667,7 +667,7 @@ const restaurants = [
         "Burgers",
         "American"
       ],
-      "avgRating": 4.2,
+      "avgRating": 3.2,
       "parentId": "166",
       "avgRatingString": "4.2",
       "totalRatingsString": "36K+",
