@@ -11,7 +11,7 @@ const Body = () => {
         fetchingData();
     },[])
     const fetchingData= async () => {
-        let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.38430&lng=78.45830&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        let data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
         let json = await data.json();
         setListofrestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
         setFilteredData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
@@ -36,7 +36,7 @@ const Body = () => {
                         listofrestaurants = listofrestaurants.filter(
                         (res)=>res.info.avgRating > 4.5
                         );
-                        setListofrestaurant(listofrestaurants)
+                        setFilteredData(listofrestaurants)
                         }}>Top rated restaurants
                     </button>
                 </div>
