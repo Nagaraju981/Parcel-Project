@@ -2,6 +2,7 @@ import RestaurantCard from './RestaurantCard'
 // import restaurants from '../Utils/mockData';
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer'
+import { Link } from 'react-router-dom';
 
 const Body = () => {
     let [listofrestaurants, setListofrestaurant] = useState([])
@@ -11,7 +12,7 @@ const Body = () => {
         fetchingData();
     },[])
     const fetchingData= async () => {
-        let data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
+        let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4462183&lng=78.36217839999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         let json = await data.json();
         setListofrestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
         setFilteredData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
@@ -45,7 +46,7 @@ const Body = () => {
             <div className='restaurant-container'>
                 {
                     filteredData.map((e) => (
-                        <RestaurantCard key={e.info.id} data={e} />
+                        <Link key={e.info.id} to={'/Restaurant/'+e.info.id}><RestaurantCard data={e} /></Link>
                     ))
                 }
             </div>
