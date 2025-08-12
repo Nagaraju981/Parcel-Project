@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RES_URL } from "../Utils/constants";
+import useRestaurantInfo from "../Utils/useRestaurantInfo";
 
 
 const RestaurantInfo = () =>{
-    const [resInfo, setResInfo] = useState(null)
-    useEffect(()=>{
-        fetchingData()
-    },[])
     const {resId} = useParams()
-    const fetchingData = async()=>{
-        const data = await fetch(RES_URL+resId)
-        const json = await data.json()
-        setResInfo(json.data)
-    }
+    const resInfo = useRestaurantInfo(resId)
     const { name, avgRating, costForTwoMessage, cuisines } = resInfo?.cards[2]?.card?.card?.info || {};
     // const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[1] || {};
     // console.log(itemCards)
