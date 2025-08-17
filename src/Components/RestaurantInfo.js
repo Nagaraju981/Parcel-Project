@@ -6,6 +6,7 @@ import RestaurantMenuCategory from "./RestaurantMenuCategory";
 
 
 const RestaurantInfo = () =>{
+    const [showIndex, setShowIndex] = useState(null)
     const {resId} = useParams()
     const resInfo = useRestaurantInfo(resId)
     const { name, avgRating, costForTwoMessage, cuisines } = resInfo?.cards[2]?.card?.card?.info || {};
@@ -19,8 +20,8 @@ const RestaurantInfo = () =>{
                 <h3 className="p-4 font-bold text-xl">Menu</h3>
             </div>
             <div>
-                {(categories).map((category)=>(
-                    <RestaurantMenuCategory data={category} key={category.card.card.categoryId}/>
+                {(categories).map((category, index)=>(
+                    <RestaurantMenuCategory data={category} key={category.card.card.categoryId} showItems={index === showIndex} setShowIndex={()=>setShowIndex(prev => (prev === index ? null : index))}/>
                 ))}
             </div>
             

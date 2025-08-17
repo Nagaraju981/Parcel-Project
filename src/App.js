@@ -8,15 +8,25 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Error from './Components/Error'
 import Contact from './Components/Contact';
 import RestaurantInfo from './Components/RestaurantInfo';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import UserContext from './Utils/UserContext';
 
 const AppLayout = () => {
+    const [userInfo, setUserInfo] = useState(null)
+    useEffect(()=>{
+        const data = {
+            name : "Nagaraju"
+        }
+        setUserInfo(data.name)
+    },[])
     return (
-        <div className='app-layout'>
-            <Header />
-            <Outlet />
-            
-        </div>
+        <UserContext.Provider value={{loggedInUser : userInfo, setUserInfo}}>
+            <div className='app-layout'>
+                <Header />
+                <Outlet />
+            </div>
+        </UserContext.Provider>
+        
     )
 }
 const About = lazy(()=>import('./Components/About'))

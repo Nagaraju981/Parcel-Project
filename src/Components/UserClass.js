@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../Utils/UserContext";
 
 class UserClass extends React.Component{
     constructor(props){
@@ -22,7 +23,12 @@ class UserClass extends React.Component{
                         count2 : count2+1
                     })
                 }}>Increment</button>
-                <h3>Name : {'Nagaraju(Class)'}</h3>
+                <UserContext.Consumer>
+                    {({loggedInUser})=>(
+                        <h3>Name : {loggedInUser + " from Context"}</h3>
+                    )}
+                </UserContext.Consumer>
+                
                 <h3>Location : Hyderabad</h3>
                 <h4>Area : {area}</h4>
                 <h3>Email : @nagaraju7</h3>
