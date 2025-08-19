@@ -10,6 +10,9 @@ import Contact from './Components/Contact';
 import RestaurantInfo from './Components/RestaurantInfo';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import UserContext from './Utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './Redux/appStore';
+import Cart from './Components/cart';
 
 const AppLayout = () => {
     const [userInfo, setUserInfo] = useState(null)
@@ -20,12 +23,15 @@ const AppLayout = () => {
         setUserInfo(data.name)
     },[])
     return (
-        <UserContext.Provider value={{loggedInUser : userInfo, setUserInfo}}>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{loggedInUser : userInfo, setUserInfo}}>
             <div className='app-layout'>
                 <Header />
                 <Outlet />
             </div>
-        </UserContext.Provider>
+            </UserContext.Provider>
+        </Provider>
+        
         
     )
 }
@@ -50,6 +56,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/Restaurant/:resId',
                 element: <RestaurantInfo />
+            },
+            {
+                path: '/Cart',
+                element: <Cart />
             }
         ],
         errorElement: <Error />
