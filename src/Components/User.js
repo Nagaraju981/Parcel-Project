@@ -14,6 +14,6 @@ const User = ({area}) =>{
             <h3>Email : @nagaraju7</h3>
         </div>
     )
-}
+};
 
 export default User;

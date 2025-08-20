@@ -5,7 +5,7 @@ const useRestaurantInfo = (resId) =>{
     const [resInfo, setResInfo] = useState(null)
     useEffect(()=>{
         fetchingData()
-    })
+    });
     const fetchingData = async() => {
         const data = await fetch(RES_URL+resId)
         const json = await data.json()

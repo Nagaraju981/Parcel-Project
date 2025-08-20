@@ -7,7 +7,7 @@ import UserContext from "../Utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header =()=>{
-    const [btnVariable, setBtnVariable] =useState("Login")
+    const [btnVariable, setBtnVariable] =useState("Login");
     const status = useOnlineStatus();
     const { loggedInUser } = useContext(UserContext);
     const cartItems = useSelector((store)=>store.cart.items);

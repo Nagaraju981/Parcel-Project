@@ -8,7 +8,7 @@ class UserClass extends React.Component{
             count1 : 1,
             count2 : 2
         }
-    }
+    };
     
     render(){
         const {area} = this.props
@@ -35,6 +35,6 @@ class UserClass extends React.Component{
             </div>
         )
     }
-}
+};
 
 export default UserClass;

@@ -11,6 +11,6 @@ const About = () => {
             <UserClass area = {'Gachibowli (Class)'}/>
         </div>
     )
-}
+};
 export default About;
 

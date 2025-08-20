@@ -19,5 +19,5 @@ const RestaurantMenuCategory = ({data, showItems, setShowIndex}) => {
             </div>
         </div>
     )
-}
+};
 export default RestaurantMenuCategory;

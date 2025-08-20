@@ -4,5 +4,5 @@ const Footer =()=>{
             Footer 1
         </div>
     )
-}
+};
 export default Footer;

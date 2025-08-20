@@ -12,5 +12,5 @@ const RestaurantCard =(props)=>{
             <h4 className="px-2">{sla.deliveryTime} minutes</h4>
         </div>
     )
-}
+};
 export default RestaurantCard;

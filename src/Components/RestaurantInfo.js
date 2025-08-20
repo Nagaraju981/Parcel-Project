@@ -28,5 +28,5 @@ const RestaurantInfo = () =>{
             
         </div>
     )
-}
+};
 export default RestaurantInfo;
